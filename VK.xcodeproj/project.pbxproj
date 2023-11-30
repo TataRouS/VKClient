@@ -9,23 +9,21 @@
 /* Begin PBXBuildFile section */
 		BD10C9332A7C09BD0034025F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD10C9322A7C09BD0034025F /* AppDelegate.swift */; };
 		BD10C9352A7C09BD0034025F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD10C9342A7C09BD0034025F /* SceneDelegate.swift */; };
-		BD10C9372A7C09BD0034025F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD10C9362A7C09BD0034025F /* ViewController.swift */; };
 		BD10C93A2A7C09BD0034025F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD10C9382A7C09BD0034025F /* Main.storyboard */; };
 		BD10C93C2A7C09BE0034025F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD10C93B2A7C09BE0034025F /* Assets.xcassets */; };
 		BD10C93F2A7C09BE0034025F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD10C93D2A7C09BE0034025F /* LaunchScreen.storyboard */; };
-		BD10C9892A80034A0034025F /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD10C9882A80034A0034025F /* NewViewController.swift */; };
+		BD439B112B1136EC00814B15 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439B102B1136EC00814B15 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BD10C92F2A7C09BD0034025F /* VK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD10C9322A7C09BD0034025F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD10C9342A7C09BD0034025F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD10C9362A7C09BD0034025F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BD10C9392A7C09BD0034025F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD10C93B2A7C09BE0034025F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD10C93E2A7C09BE0034025F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD10C9402A7C09BE0034025F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD10C9882A80034A0034025F /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		BD439B102B1136EC00814B15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +58,11 @@
 			children = (
 				BD10C9322A7C09BD0034025F /* AppDelegate.swift */,
 				BD10C9342A7C09BD0034025F /* SceneDelegate.swift */,
-				BD10C9362A7C09BD0034025F /* ViewController.swift */,
+				BD439B102B1136EC00814B15 /* LoginViewController.swift */,
 				BD10C9382A7C09BD0034025F /* Main.storyboard */,
 				BD10C93B2A7C09BE0034025F /* Assets.xcassets */,
 				BD10C93D2A7C09BE0034025F /* LaunchScreen.storyboard */,
 				BD10C9402A7C09BE0034025F /* Info.plist */,
-				BD10C9882A80034A0034025F /* NewViewController.swift */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -141,10 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD10C9372A7C09BD0034025F /* ViewController.swift in Sources */,
+				BD439B112B1136EC00814B15 /* LoginViewController.swift in Sources */,
 				BD10C9332A7C09BD0034025F /* AppDelegate.swift in Sources */,
 				BD10C9352A7C09BD0034025F /* SceneDelegate.swift in Sources */,
-				BD10C9892A80034A0034025F /* NewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

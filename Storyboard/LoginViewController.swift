@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       print("logonviewController")
 //
 //        let tapGR = UITapGestureRecognizer(target: self, action: #selector(hideScreen))
 //        view.addGestureRecognizer(tapGR)
@@ -70,14 +70,15 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginButton(_ sender: Any) {
+      
         guard let login = login.text,
               let password = password.text,
               login == "",
               password == "" else {
+            
             show(message: "Введены неверные данные пользователя")
             return
         }
-        
         performSegue(withIdentifier: "Login", sender: nil)
     }
 }
@@ -85,6 +86,7 @@ class LoginViewController: UIViewController {
   
 
 extension LoginViewController {
+    
     func show(message: String) {
         
         let alertVC = UIAlertController(title: "ОШИБКА",

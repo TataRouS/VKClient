@@ -10,26 +10,23 @@ import UIKit
 class LoginViewController: UIViewController {
 
    
-    @IBOutlet weak var pictureVK: UILabel!
+    @IBOutlet weak var VKLabel: UILabel!
     
-    
-    @IBOutlet weak var autorization: UILabel!
-  
     
     @IBOutlet weak var login: UITextField!
     
     
     @IBOutlet weak var password: UITextField!
     
-        
-    @IBOutlet weak var enterVK: UIButton!
     
+    
+    @IBOutlet weak var button: UIButton!
     
  //   @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       print("logonviewController")
 //
 //        let tapGR = UITapGestureRecognizer(target: self, action: #selector(hideScreen))
 //        view.addGestureRecognizer(tapGR)
@@ -68,23 +65,39 @@ class LoginViewController: UIViewController {
 //        scrollView.contentInset = .zero
 //    }
     
-    
     @IBAction func loginButton(_ sender: Any) {
         guard let login = login.text,
-              let password = password.text,
-              login == "",
-              password == "" else {
-            show(message: "Введены неверные данные пользователя")
-            return
-        }
-        
-        performSegue(withIdentifier: "Login", sender: nil)
+                    let password = password.text,
+                    login == "",
+                    password == "" else {
+      
+                  show(message: "Введены неверные данные пользователя")
+                  return
+              }
+              performSegue(withIdentifier: "Login", sender: nil)
+          }
     }
-}
+    
+    
+    
+//    @IBAction func loginButton(_ sender: Any) {
+//
+//        guard let login = login.text,
+//              let password = password.text,
+//              login == "",
+//              password == "" else {
+//
+//            show(message: "Введены неверные данные пользователя")
+//            return
+//        }
+//        performSegue(withIdentifier: "Login", sender: nil)
+//    }
+//}
     
   
 
 extension LoginViewController {
+    
     func show(message: String) {
         
         let alertVC = UIAlertController(title: "ОШИБКА",

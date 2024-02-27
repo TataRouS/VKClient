@@ -10,49 +10,59 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class FriendCollectionViewController: UICollectionViewController {
-
+    
+    var user: User?
+    public var images = [UIImage]()
+    public var selectPhotoIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        title = user?.name
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return user?.photos.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCell, let user = user else {
+            preconditionFailure("Error collection cell")
+        }
+        //cell.photoImage.image = user?.image
+        cell.photoImage.image = user.photos[indexPath.item]
+        
+        
         return cell
     }
+
+
+}
+
+
+extension FriendCollectionViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "shouBigPhotoUsers",
+           
+            
+            let selectPhoto = collectionView.indexPathsForSelectedItems?.first,
+           let bigPhoto = segue.destination as? BigPhotoViewController, let user = user {
+            bigPhoto.photos = user.photos
+            bigPhoto.selectPhotoIndex = selectPhoto.item
+        }
+            
+    }
+    
 
     // MARK: UICollectionViewDelegate
 

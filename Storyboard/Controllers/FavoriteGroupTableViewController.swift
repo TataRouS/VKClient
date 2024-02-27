@@ -5,10 +5,32 @@
 //  Created by Nata Kuznetsova on 02.12.2023.
 //
 
+
 import UIKit
 
 class FavoriteGroupTableViewController: UITableViewController {
 
+    @IBAction func addSelectedGroup(segue: UIStoryboardSegue){
+
+        if let sourceVC = segue.source as? GroupTableViewController,
+           let index = sourceVC.tableView.indexPathForSelectedRow {
+            let group = sourceVC.groups[index.row]
+           
+            if !groups.contains(where: {$0.name == group.name}) {
+                groups.append(group)
+                tableView.reloadData()
+        }
+    }
+    }
+    
+    var groups = [
+    
+        Group(image: UIImage(named: "garden"), name: "Сад с нуля"),
+        Group(image: UIImage(named: "cinema"), name: "Фильмы онлайн"),
+        Group(image: UIImage(named: "english"), name: "English для детей")
+        
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,23 +45,31 @@ class FavoriteGroupTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return groups.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as? GroupCell else {
+            preconditionFailure("Error cell")
+        }
 
         // Configure the cell...
+        
+//        print(indexPath.section)
+//        print(indexPath.row)
 
+        cell.groupNameLabel.text = groups[indexPath.row].name
+        cell.groupImageView.image = groups[indexPath.row].image
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -49,17 +79,15 @@ class FavoriteGroupTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            groups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
